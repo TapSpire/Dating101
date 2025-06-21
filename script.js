@@ -14,74 +14,43 @@ const textContent = [
   '0', '1', '2', '1', '0',
 ];
 
-
-
 const correctWords = [
-  "WebDriver driver = new ChromeDriver();",
-  "driver.get(\"https://www.example.com\");",
-  "driver.findElement(By.id(\"username\")).sendKeys(\"user1\");",
-  "driver.findElement(By.name(\"password\")).sendKeys(\"pass123\");",
-  "driver.findElement(By.className(\"submit-btn\")).click();",
-  "driver.quit();",
-  "driver.close();",
-  "String title = driver.getTitle();",
-  "String currentURL = driver.getCurrentUrl();",
-  "WebElement element = driver.findElement(By.tagName(\"h1\"));",
-  "driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));",
-  "WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));",
-  "wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(\"welcome\")));",
-  "driver.switchTo().alert().accept();",
-  "driver.switchTo().alert().dismiss();",
-  "driver.switchTo().frame(\"frame1\");",
-  "driver.switchTo().defaultContent();",
-  "Actions actions = new Actions(driver);",
-  "actions.moveToElement(driver.findElement(By.id(\"menu\"))).perform();",
-  "actions.doubleClick(driver.findElement(By.id(\"button\"))).perform();",
-  "JavascriptExecutor js = (JavascriptExecutor) driver;",
-  "js.executeScript(\"window.scrollBy(0,500)\");",
-  "driver.navigate().to(\"https://google.com\");",
-  "driver.navigate().back();",
-  "driver.navigate().forward();",
-  "driver.manage().window().maximize();",
-  "TakesScreenshot screenshot = ((TakesScreenshot)driver);",
-  "File src = screenshot.getScreenshotAs(OutputType.FILE);",
-  "Select dropdown = new Select(driver.findElement(By.id(\"country\")));",
-  "dropdown.selectByVisibleText(\"Canada\");"
+  "Trust your instincts when you sense narcissistic behavior early.",
+  "Look out for a partner who is overly self-centered or constantly demands attention.",
+  "Be cautious if they always talk about themselves and disregard your feelings.",
+  "Recognize the tendency to gaslight—narcissists often make you question your reality.",
+  "Watch for inconsistency in their behavior. One moment they seem charming, the next cold and distant.",
+  "Pay attention if they seem to have a lack of empathy toward others, especially in tough situations.",
+  "Set clear boundaries and notice if they respect them. Narcissists will often push limits.",
+  "If your partner is always looking for validation and admiration, it might be a red flag.",
+  "A healthy relationship requires mutual respect, not just admiration of one person.",
+  "Watch how they treat others in your social circle. Narcissists may belittle or manipulate people."
 ];
 
 const incorrectWords = [
-  "WebDriver driver = new Firefox();",  // Incorrect constructor
-  "driver.goto(\"http://site.com\");",  // No 'goto' method
-  "driver.find(By.id(\"test\"));",  // Method 'find' doesn't exist
-  "driver.getElements(By.className(\"box\"));",  // Should be 'findElements'
-  "driver.click(By.name(\"login\"));",  // Cannot call click on driver directly
-  "driver.inputText(\"username\", \"admin\");",  // No such method
-  "WebDriverWait wait = new WebDriverWait(10);",  // Missing driver reference
-  "driver.switch.alert().accept();",  // 'switch.alert()' is invalid
-  "driver.closeAll();",  // No such method
-  "driver.quitBrowser();",  // Method doesn't exist
-  "driver.maximize();",  // Should be 'driver.manage().window().maximize();'
-  "String pageSource = driver.pageHTML();",  // Incorrect method
-  "driver.findElementByText(\"Submit\");",  // Not a valid method
-  "driver.refreshPage();",  // Incorrect method
-  "element.writeText(\"Hello\");",  // No 'writeText' method
-  "driver.window().resize(800,600);",  // Incorrect window sizing
-  "js.runScript(\"alert('Hi')\");",  // Incorrect method name
-  "driver.back();",  // Method should be driver.navigate().back();
-  "Select drop = new SelectBox(driver.findElement(By.id(\"list\")));",  // Wrong class name
-  "driver.frame(\"mainFrame\");",  // Incomplete switchTo
-  "driver.selectOption(\"Canada\");",  // No such method
-  "driver.getElement(By.name(\"email\"));",  // Should be findElement
-  "driver.setText(By.id(\"user\"), \"admin\");",  // Not valid
-  "driver.hover(By.id(\"menu\"));",  // No direct hover method
-  "wait.untilElement(By.id(\"done\"));",  // Incorrect method
-  "WebDriver driver = new WebDriver();",  // Cannot instantiate interface
-  "driver.getURL(\"http://test.com\");",  // Should be get()
-  "actions.rightClick(By.id(\"target\")).perform();",  // Need WebElement
-  "screenshot.capture(\"image.png\");",  // Invalid method
-  "driver.clickElement(By.id(\"submit\"));"  // Should get element then click
+  "Always ignore your gut feelings in a relationship.",  // Gut feelings are often your best guide.
+  "Accept constant criticism without questioning it.",  // Healthy relationships should be supportive.
+  "Ignore your own needs and always prioritize their wants.",  // A relationship should be mutual, not one-sided.
+  "Allow them to gaslight you into questioning your reality.",  // Gaslighting is emotional abuse.
+  "Let them control your life and make decisions for you.",  // Healthy relationships require shared control.
+  "Acknowledge every little thing they do as amazing, even if it's not.",  // Narcissists thrive on excessive praise.
+  "If they talk negatively about others, dismiss it as nothing.",  // Constant negativity can be a sign of narcissism.
+  "Overlook disrespectful behavior to avoid conflict.",  // Don't compromise your values for peace.
+  "Ignore warning signs when their behavior is manipulative or self-centered.",  // Awareness is key to avoiding narcissistic relationships.
+  "Believe everything they say without questioning, even if it doesn’t make sense.",  // Always trust your own judgment.
+  "Let them belittle you in public and accept it as normal.",  // Public humiliation is a major red flag.
+  "Let them isolate you from your friends and family for ‘your own good.’",  // Isolation is a classic narcissistic tactic.
+  "Compromise your own emotional well-being for their ego.",  // A balanced relationship supports both partners' mental health.
+  "Allow them to make you feel guilty without reason.",  // Narcissists often use guilt-tripping as manipulation.
+  "Ignore your own self-worth and only focus on their achievements.",  // A relationship should elevate both partners.
+  "Avoid setting boundaries because they might get upset.",  // Boundaries are necessary for a healthy relationship.
+  "Give up on your personal goals just to accommodate them.",  // A relationship should support both partners' aspirations.
+  "Let them manipulate you with charm and emotional blackmail.",  // Manipulation is never acceptable.
+  "Believe their promises of change without seeing real actions.",  // Narcissists rarely change without genuine self-awareness.
+  "Accept lies and dishonesty as part of the relationship.",  // Honesty is crucial for trust in any relationship.
+  "Keep forgiving their repeated toxic behaviors in the name of love.",  // Toxic behavior shouldn't be tolerated.
+  "Ignore red flags, thinking that things will get better over time.",  // Red flags are often signs to walk away early.
 ];
-
 
 
 let currentWord = "";
